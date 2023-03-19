@@ -1,3 +1,6 @@
+let playerPoints = 0;
+let computerPoints = 0;
+
 function getComputerChoice(callback) {
     if (callback() === 0) {
         return "ROCK";
@@ -18,9 +21,11 @@ function getPlayerChoice() {
 }
 
 function winRound(a,b) {
+    playerPoints++;
     console.log(`You Win! ${a} beats ${b}`)
 }
 function loseRound(a,b) {
+    computerPoints++;
     console.log(`You Lose! ${b} beats ${a}`)
 }
 
@@ -47,5 +52,25 @@ function playRound(playerSelection,computerSelection) {
         else return winRound(playerSelection,computerSelection)
     }
 }
+function game() {
+    playerPoints = 0;
+    computerPoints = 0;
 
-playRound(getPlayerChoice(),getComputerChoice(getRandomInt))
+    for (let i = 1; i<=5; i++) {
+        console.log(`Round ${i}!`)
+        playRound(getPlayerChoice(),getComputerChoice(getRandomInt))
+    }
+
+    if (computerPoints===playerPoints) {
+        console.log(`It\'s a draw ${playerPoints} : ${computerPoints}`)
+    }
+    else if (computerPoints>playerPoints) {
+        console.log(`You Lose a Game! ${playerPoints} : ${computerPoints}`)
+    }
+    else console.log(`You Won a Game! ${playerPoints} : ${computerPoints}`)
+
+    const replay = confirm('Do you want to play again?');
+    if (replay) game()
+ }
+
+ game();
