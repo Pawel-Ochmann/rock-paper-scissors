@@ -52,6 +52,8 @@ function playRound(playerSelection,computerSelection) {
         else return winRound(playerSelection,computerSelection)
     }
 }
+
+
 function game() {
     playerPoints = 0;
     computerPoints = 0;
@@ -73,4 +75,4 @@ function game() {
     if (replay) game()
  }
 
- game();
+
