@@ -11,18 +11,18 @@ body {
  align-items: center;
  text-align: center;
  height: 100vh;
- padding-top: 5vh;
+ padding-top: 3vh;
 }
 h1 {
-    font-size: 70px;
+    font-size: 60px;
 }
 h2 {
-    font-size: 50px;
+    font-size: 40px;
     letter-spacing: 2px;
 }
 .info>p
  {
-    font-size: 50px;
+    font-size: 40px;
  }
 img {
     width:50%;
@@ -30,9 +30,9 @@ img {
 }
 button {
     width:150px;
-    height: 80px;
+    height: 70px;
     background-color: rgb(39, 228, 39);
-    font-size: 60px;
+    font-size: 50px;
     border-radius: 10px;
     transition: .3s;
 }
@@ -45,7 +45,7 @@ button:hover {
 .title {
     display:flex;
     flex-direction: column;
-    gap:8vh;
+    gap:4vh;
 }
 
 .container {
