@@ -2,16 +2,15 @@ let playerPoints = 0;
 let computerPoints = 0;
 let round = 1;
 
-playerPoints = 0;
-computerPoints = 0;
+
 
 const choices = document.querySelectorAll('.img');
 choices.forEach((e) => {
     e.addEventListener('click', getPlayerChoice)
 })
 
-
-const result = document.querySelector("#result");
+const result = document.querySelector('#result');
+const roundCounter = document.querySelector("#roundCounter");
 const info = document.querySelector(".info>p")
 
 function getComputerChoice(callback) {
@@ -34,7 +33,7 @@ function getPlayerChoice() {
         e.classList.remove('chosen', 'playerWin', 'playerLose', 'draw')
     })
 
-    result.textContent = (`Round ${round}!`);
+    roundCounter.textContent = (`Round ${round}!`);
     this.classList.add('chosen');
     let playerChoice = this.id;
     round++;
@@ -82,19 +81,29 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-    console.log(playerPoints, computerPoints)
-
+    result.textContent = `Player: ${playerPoints} Computer: ${computerPoints}`
     if (playerPoints === 5 || computerPoints === 5) {
 
-        if (computerPoints === playerPoints) {
-            console.log(`It\'s a draw ${playerPoints} : ${computerPoints}`)
+         if (computerPoints > playerPoints) {
+            info.textContent = (`You Lose a Game! ${playerPoints} : ${computerPoints}`)
+            replay()
         }
-        else if (computerPoints > playerPoints) {
-            console.log(`You Lose a Game! ${playerPoints} : ${computerPoints}`)
-        }
-        else console.log(`You Won a Game! ${playerPoints} : ${computerPoints}`)
+        else info.textContent = (`You Won a Game! ${playerPoints} : ${computerPoints}`)
+        replay()
     }
     else return;
 }
 
 
+function replay() {
+    choices.forEach((e) => {
+        e.classList.remove('chosen', 'playerWin', 'playerLose', 'draw')
+    })
+
+    const replay = document.querySelector('.title');
+    replay.innerHTML = `<h1>Play again? <button> YES </button></h1>`
+    replay.querySelector('button').addEventListener('click', ()=> {
+         
+        location.reload();
+     })
+}
