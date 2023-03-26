@@ -20,7 +20,10 @@ h2 {
     font-size: 50px;
     letter-spacing: 2px;
 }
-
+.info>p
+ {
+    font-size: 50px;
+ }
 img {
     width:50%;
     aspect-ratio: 1;
@@ -58,4 +61,16 @@ img {
     border:8px solid rgb(39, 228, 39);
     box-shadow: 0 0 10px rgb(39, 228, 39);
 
+}
+
+.playerWin {
+    background-color: rgb(39, 228, 39);
+}
+
+.playerLose {
+    background-color: red;
+}
+
+.draw {
+    background-color: grey;
 }

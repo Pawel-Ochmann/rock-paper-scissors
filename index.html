@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
         <div class="title">
         <h1>Let's play the game!</h1>
-        <h2>
-            Round:1!
+        <h2 id="result">
         </h2>
         <h2>
             Choose one:
@@ -22,18 +21,21 @@
         <div class="counter"></div>
    </header>
     <div class="container">
-        <div class="chosen">
+        <div id="ROCK" class="img">
             <img src="images/rock.png" alt="">
             <h3>Rock</h3>
         </div>
-        <div>
+        <div id="PAPER" class="img">
             <img src="images/paper.png" alt="">
             <h3>Paper</h3>
         </div>
-        <div>
+        <div id="SCISSORS" class="img">
             <img src="images/scissors.png" alt="">
             <h3>Scissors</h3>
         </div>
+    </div>
+    <div class="info">
+        <p></p>
     </div>
 </body>
 </html>
